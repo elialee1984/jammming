@@ -1,6 +1,6 @@
 import React from "react";
 
-const Track = ({ track, onAdd }) => {
+const Track = ({ track, onAdd, onRemove }) => {
     if (!track) {
         return <div>Track information is missing</div>;
     }
@@ -12,6 +12,7 @@ const Track = ({ track, onAdd }) => {
                 {track.artist} | {track.album}
             </p>
             <button onClick={() => onAdd(track)}>+</button>
+            <button onClick={() => onRemove(track)}>-</button>
         </div>
     );
 };

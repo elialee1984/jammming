@@ -23,18 +23,24 @@ const App = () => {
         setPlaylistTracks([...playlistTracks, track]);
     };
 
+    const removeTrack = (track) => {
+        setPlaylistTracks(
+            playlistTracks.filter((savedTrack) => savedTrack.id !== track.id)
+        );
+    };
+
     return (
         <div>
             <h2>Playlist-Component</h2>
-            <Playlist name={playlistName} tracks={playlistTracks} />
+            <Playlist name={playlistName} tracks={playlistTracks} onAdd={addTrack} onRemove={removeTrack}/>
             <h2>SearchBar-Component</h2>
             <SearchBar />
             <h2>SearchResuls-Component</h2>
-            <SearchResults tracks={tracks} onAdd={addTrack}/>
+            <SearchResults tracks={tracks} onAdd={addTrack} />
             <h2>Track-Component</h2>
             <Track />
             <h2>Tracklist-Component</h2>
-            <Tracklist />
+            <Tracklist onRemove={removeTrack} />
             <h2>Some buttons</h2>
             <button>Save To Spotify</button>
             <button>Search</button>
