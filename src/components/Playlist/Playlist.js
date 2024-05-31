@@ -1,7 +1,13 @@
 import React from "react";
+import Tracklist from "../Tracklist/Tracklist";
 
-const Playlist = () => {
-    return <div>Playlist</div>;
+const Playlist = ({ name, tracks }) => {
+    return (
+        <div>
+            <h2>{name}</h2>
+            <Tracklist tracks={tracks} />
+        </div>
+    );
 };
 
 export default Playlist;

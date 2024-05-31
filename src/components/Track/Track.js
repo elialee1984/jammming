@@ -1,6 +1,6 @@
 import React from "react";
 
-const Track = ({ track }) => {
+const Track = ({ track, onAdd }) => {
     if (!track) {
         return <div>Track information is missing</div>;
     }
@@ -11,6 +11,7 @@ const Track = ({ track }) => {
             <p>
                 {track.artist} | {track.album}
             </p>
+            <button onClick={() => onAdd(track)}>+</button>
         </div>
     );
 };
