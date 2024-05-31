@@ -11,8 +11,8 @@ const Track = ({ track, onAdd, onRemove }) => {
             <p>
                 {track.artist} | {track.album}
             </p>
-            <button onClick={() => onAdd(track)}>+</button>
-            <button onClick={() => onRemove(track)}>-</button>
+            {onAdd && <button onClick={() => onAdd(track)}>+</button>}
+            {onRemove && <button onClick={() => onRemove(track)}>-</button>}
         </div>
     );
 };
